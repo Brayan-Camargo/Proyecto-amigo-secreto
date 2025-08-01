@@ -6,12 +6,18 @@ function agregarAmigo() {
     let addAmigo = document.getElementById("amigo").value;
 
     //agregamos amigos a lista, limpiamos pantalla y mandamos alert
-    if (addAmigo != "") {
-        amigos.push(addAmigo);
+    if (amigos === "") {
+        alert("Por favor, inserta un nombre.");
+    } else if(amigos.includes(addAmigo)) {
+        alert("Ese nombre ya fue agregado, ingresa un nombre nuevo.");
+    } else {
+    amigos.push(addAmigo);
         document.getElementById("amigo").value = "";
         console.log(addAmigo);
         console.log(amigos);
-    } else {
-        alert("Por favor, inserte un nombre.");
     }
+}
+
+function listaAmigos() {
+
 }
