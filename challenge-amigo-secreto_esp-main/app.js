@@ -1,6 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = [];
-//let yaSorteado = [];
+let yaSorteado = [];
 
 function agregarAmigo() {
     //creamos variable para obtenes los datos y despues agregarlos con push a nuestra cadena
@@ -37,17 +37,27 @@ function lista() {
 
 function sortearAmigo() {
     //Realizaremos la funcion para sortear de manera pseudoaleatoria el amigo secreto.
-    if (amigos.length > 0) {
-        let amigoRandom = Math.floor(Math.random()*amigos.length);
-        let amigoSorteado = amigos[amigoRandom];
-        //yaSorteado.push(amigoSorteado);
-        document.getElementById("resultado").innerHTML = `Tu amigo secreto es: 🎉${amigoSorteado}🎉`;
-
-        console.log(amigoRandom);
-        console.log(amigoSorteado);
-        //console.log(yaSorteado);
-    } else {
-        alert("No hay amigos suficientes para sortear tu amigo secreto");
+    if (amigos.length === 0) {
+        alert("No hay amigos suficientes para sortear");
+        return;
     }
+
+    if (yaSorteado.length === amigos.length) {
+        alert("Ya se sortearon todos los amigos posibles");
+        return;
+    }
+
+    let amigoSorteado;
+
+    do {
+        let amigoRandom = Math.floor(Math.random() * amigos.length);
+        amigoSorteado = amigos[amigoRandom];
+    } while (yaSorteado.includes(amigoSorteado));
+
+    yaSorteado.push(amigoSorteado);
+
+    document.getElementById("resultado").innerHTML = `Tu amigo sorteado es: 🎉${amigoSorteado}🎉`;
+
     return;
 }
+
