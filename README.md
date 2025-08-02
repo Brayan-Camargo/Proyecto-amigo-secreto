@@ -1,4 +1,4 @@
-# 🐶 [PROYECTO AMIGO SECRETO](challenge-amigo-secreto_esp-main/index.html) 🐶
+# 🐶 [PROYECTO AMIGO SECRETO](https://brayan-camargo.github.io/Proyecto-amigo-secreto/) 🐶
 
 _Este proyecto forma parte de la certificación con ALURA LATAM donde realizaremos toda la funcionalidad por medio de JavaScript para poder ingresar nombres de nuestros participantes, alamacenarlos y mostrarlos en la pagina para posteriormente poder realizar el sorteo y saber quein de todos los participantes sera tu nuevo amigo secreto._
 
@@ -6,7 +6,7 @@ _Este proyecto forma parte de la certificación con ALURA LATAM donde realizarem
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Aqui **[AMIGO SECRETO](challenge-amigo-secreto_esp-main/index.html)** para probarlo.
+Aqui **[AMIGO SECRETO](https://brayan-camargo.github.io/Proyecto-amigo-secreto/)** para probarlo.
 Si deseas descargarlo puedes hacerlo con mucho gusto.
 
 ## Construido con 🛠️
