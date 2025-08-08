@@ -4,10 +4,9 @@ _Este proyecto forma parte de la certificación con ALURA LATAM donde realizarem
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+_Si deseas descargarlo puedes hacerlo con mucho gusto._
 
 Aqui **[AMIGO SECRETO](https://brayan-camargo.github.io/Proyecto-amigo-secreto/)** para probarlo.
-Si deseas descargarlo puedes hacerlo con mucho gusto.
 
 ## Construido con 🛠️
 
@@ -25,7 +24,7 @@ Usamos [Git y GitHub] para el versionado.
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Brayan Camargo** - *Estructura completa de JS y mejora de HTML y CSS* - [Brayan](#https://github.com/Brayan-Camargo)
+* **Brayan Camargo** - *Estructura completa de JS y mejora de HTML y CSS* - [Brayan](#[https://github.com/Brayan-Camargo](https://www.linkedin.com/in/brayan-camargo-ram%C3%ADrez/))
 * **Alura Latam** - *Estructura basica HTML y CSS* - [AluraLatam](#https://www.aluracursos.com/)
 
 ## Licencia 📄
@@ -37,8 +36,5 @@ Este proyecto está bajo la Licencia ("Provisional") - mira el archivo [LICENSE.
 * Gracias por ver el proyecto y si te gusto o sirvio hazmelo saber 📢
 * Ayudarme a terminar mi certificacion en Js. Puedes donar por paypal a: `@BrayanCamargoRamirez`
 
-
-
-
 ---
-⌨️ con ❤️ por [Brayan Camargo](#https://github.com/Brayan-Camargo) 🐶
+⌨️ con ❤️ por [Brayan Camargo](#[https://github.com/Brayan-Camargo](https://www.linkedin.com/in/brayan-camargo-ram%C3%ADrez/)) 🐶
