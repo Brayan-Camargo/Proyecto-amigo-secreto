@@ -160,3 +160,23 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+@media (max-width: 800px){
+
+    .main-title{
+        margin: 5%;
+        text-align: center;
+    }
+
+    .main-content{
+        align-items: center;
+    }
+
+    .header-banner{
+        display: contents;
+    }
+
+    .imagen-amigo-secreto{
+        max-width: 50%;
+    }
+}
