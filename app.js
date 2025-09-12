@@ -1,4 +1,3 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = [];
 let yaSorteado = [];
 
@@ -21,6 +20,13 @@ function agregarAmigo() {
     }
     return;
 }
+
+const presionarEnter = document.getElementById("amigo");
+presionarEnter.addEventListener("keyup", function(event){ //Keyup se ocupa cuando se suelta la tecla
+    if(event.key === "Enter"){
+        agregarAmigo();
+    }
+});
 
 function lista() {
     //Haremos que la lista se muestre en la pagina y se limpie al final
