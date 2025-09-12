@@ -4,11 +4,15 @@ let yaSorteado = [];
 function agregarAmigo() {
     //creamos variable para obtenes los datos y despues agregarlos con push a nuestra cadena
     let addAmigo = document.getElementById("amigo").value.trim();
+    const soloLetras = /^[a-zA-Z\s]+$/; //Esto es parte del metodo RegExp para campos o rastrar cosas de Arrays
 
     //agregamos amigos a lista, limpiamos pantalla y mandamos alert
     if (addAmigo === "") {
         alert("Por favor, inserta un nombre.");
-    } else if(amigos.includes(addAmigo)) {
+    } else if (!soloLetras.test(addAmigo)) {
+        alert("Este campo solo admite letras minusculas y mayusuculas");
+        document.getElementById("amigo").value = "";
+    } else if (amigos.includes(addAmigo)) {
         document.getElementById("amigo").value = "";
         alert("Ese nombre ya fue agregado, ingresa un nombre nuevo.");
     } else {
