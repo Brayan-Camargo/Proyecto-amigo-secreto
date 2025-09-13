@@ -6,15 +6,15 @@ function agregarAmigo() {
     let addAmigo = document.getElementById("amigo").value.trim();
     const soloLetras = /^[a-zA-Z\s]+$/; //Esto es parte del metodo RegExp para campos o rastrar cosas de Arrays
 
-    //agregamos amigos a lista, limpiamos pantalla y mandamos alert
+    //agregamos amigos a lista, limpiamos pantalla y mandamos mostrarNotificacion
     if (addAmigo === "") {
-        alert("Por favor, inserta un nombre.");
+        mostrarNotificacion("Por favor, inserta un nombre.");
     } else if (!soloLetras.test(addAmigo)) {
-        alert("Este campo solo admite letras minusculas y mayusuculas");
+        mostrarNotificacion("Este campo solo admite letras minusculas y mayusuculas");
         document.getElementById("amigo").value = "";
     } else if (amigos.includes(addAmigo)) {
         document.getElementById("amigo").value = "";
-        alert("Ese nombre ya fue agregado, ingresa un nombre nuevo.");
+        mostrarNotificacion("Ese nombre ya fue agregado, ingresa un nombre nuevo.");
     } else {
         amigos.push(addAmigo);
         document.getElementById("amigo").value = "";
@@ -48,12 +48,12 @@ function lista() {
 function sortearAmigo() {
     //Realizaremos la funcion para sortear de manera pseudoaleatoria el amigo secreto.
     if (amigos.length === 0) {
-        alert("No hay amigos suficientes para sortear");
+        mostrarNotificacion("No hay amigos suficientes para sortear");
         return;
     }
 
     if (yaSorteado.length === amigos.length) {
-        alert("Ya se sortearon todos los amigos posibles");
+        mostrarNotificacion("Ya se sortearon todos los amigos posibles");
         return;
     }
 
@@ -68,6 +68,80 @@ function sortearAmigo() {
 
     document.getElementById("resultado").innerHTML = `Tu amigo sorteado es: 🎉${amigoSorteado}🎉`;
 
+    crearConfetti(); 
+    draw();
+    
     return;
 }
 
+// Funcionalidad de Confeti
+const canvas = document.getElementById("confetti-canvas");
+const contexto = canvas.getContext("2d"); //esto nos hace que s epueda dibujar en el formato de 2d
+let confetti = [];
+const numConfetti = 300;
+const coloresConfetti = [
+            '#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
+            '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50',
+            '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800'
+            ];
+
+// Confrima que el canvas ocupe la ventana completa
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function crearConfetti(){
+    for (let i = 0; i < numConfetti; i++) {
+        confetti.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height - canvas.height, // Empieza arriba
+            r: Math.random() * 6 + 2, // Radio
+            d: Math.random() * numConfetti, // Desplazamiento
+            color: coloresConfetti[Math.floor(Math.random() * coloresConfetti.length)],
+            tilt: Math.floor(Math.random() * 10) - 10,
+            tiltAngle: 0
+        });
+    }
+}
+
+function draw() {
+    contexto.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas
+    confetti.forEach(c => {
+        contexto.beginPath();
+        contexto.lineWidth = c.r;
+        contexto.strokeStyle = c.color;
+        contexto.moveTo(c.x + c.tilt + c.tiltAngle, c.y);
+        contexto.lineTo(c.x + c.tilt, c.y + c.d / 2);
+        contexto.stroke();
+    });
+    update();
+    requestAnimationFrame(draw);
+}
+
+function update() {
+    let restanteConfetti = [];
+    confetti.forEach(c => {
+        c.y += c.d;
+        c.tiltAngle += 0.1;
+
+        if (c.y <= canvas.height) {
+            restanteConfetti.push(c);
+        }
+    });
+    confetti = restanteConfetti;
+
+    if (confetti.length === 0) {
+        crearConfetti();
+    }
+}
+
+// Funcion para mostrar mostrarNotificacionas de manera más profesional
+function mostrarNotificacion(mensaje) {
+    const notificacion = document.getElementById("miNotificacion");
+    notificacion.textContent = mensaje;
+    notificacion.classList.add("show");
+
+    // Oculta la notificación despues de 3 segundos
+    setTimeout(() => {
+        notificacion.classList.remove("show");
+    }, 3000);
+}
