@@ -189,7 +189,7 @@ ul {
 /* Estilos de alerts */
 .notificacion {
     position: fixed;
-    top: -50px; /* Oculta la notificación al principio */
+    top: -300px; /* Oculta la notificación al principio */
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--color-button-hover);
@@ -200,6 +200,7 @@ ul {
     border-radius: 8px;
     z-index: 100;
     transition: top 0.5s;
+    text-align: center;
 }
 .show {
     top: 20px; /* Muestra la notificación */
