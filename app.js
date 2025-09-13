@@ -145,3 +145,14 @@ function mostrarNotificacion(mensaje) {
         notificacion.classList.remove("show");
     }, 3000);
 }
+
+// Funcion reiniciar el juego
+
+function reiniciar(){
+    document.getElementById("amigo").value = ""; //ocupamos value porque se usa para formularios, inpust y selects
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = ""; //ocupamos innerHTML porque s eusa para div, listas y spans
+
+    amigos = [];
+    yaSorteado = [];
+    }

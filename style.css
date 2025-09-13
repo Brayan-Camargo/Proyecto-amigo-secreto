@@ -161,6 +161,20 @@ ul {
     background-color: var(--color-button-hover);
 }
 
+/* Botón de Reinicio */
+.button-reload {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 14.5px 40px;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    font-size: 16px;
+}
+
+.button-reload:hover {
+    background-color: var(--color-button-hover);
+}
+
 /* Estilos de confetti */
 .confetti{
     position: fixed;
@@ -178,10 +192,12 @@ ul {
     top: -50px; /* Oculta la notificación al principio */
     left: 50%;
     transform: translateX(-50%);
-    background-color: #f44336;
-    color: white;
+    background-color: var(--color-button-hover);
+    color: var(--color-secondary);
+    font-size: x-large;
+    font-weight: bold;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     z-index: 100;
     transition: top 0.5s;
 }
